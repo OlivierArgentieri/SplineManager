@@ -56,7 +56,6 @@
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterBehaviour\UF_CharacterBehaviour.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Import\Interface\Manager\IHandler.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Import\Interface\IEnable.cs" />
-     <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\Path\UF_Path.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterComponent\UF_CharacterComponent.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterSettings\UF_CharacterSettings.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\Behaviour\UF_CameraBehaviour.cs" />

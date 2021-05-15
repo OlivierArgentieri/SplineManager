@@ -29,6 +29,7 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode
         
         #if UNITY_EDITOR
         public abstract void DrawSceneMode();
+        public abstract void DrawGizmosMode();
         public abstract void DrawSettings();
         #endif
 

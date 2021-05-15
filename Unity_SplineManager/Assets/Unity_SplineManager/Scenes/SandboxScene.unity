@@ -317,7 +317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1926073461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +331,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agents: []
+  Curves:
+  - ShowSegments: 0
+    ShowCurve: 1
+    CurveDefinition: 29
+    MaxDefinition: 100
+    MinPrecision: 1
+    CurveColor: {r: 0.9433962, g: 0.12626149, b: 0, a: 1}
+    Anchor:
+    - {x: 0, y: 0, z: 0}
+    - {x: -0.06264752, y: 0, z: 1}
+    - {x: 0, y: 0, z: 2}
+    curvePoints:
+    - {x: 0, y: 0, z: 0}
+    - {x: -0.0041715354, y: 0, z: 0.06896552}
+    - {x: -0.008045103, y: 0, z: 0.13793103}
+    - {x: -0.011620706, y: 0, z: 0.20689656}
+    - {x: -0.01489834, y: 0, z: 0.27586207}
+    - {x: -0.017878009, y: 0, z: 0.3448276}
+    - {x: -0.02055971, y: 0, z: 0.41379312}
+    - {x: -0.022943445, y: 0, z: 0.4827586}
+    - {x: -0.02502921, y: 0, z: 0.55172414}
+    - {x: -0.02681701, y: 0, z: 0.62068963}
+    - {x: -0.028306847, y: 0, z: 0.6896552}
+    - {x: -0.029498713, y: 0, z: 0.7586207}
+    - {x: -0.030392613, y: 0, z: 0.82758623}
+    - {x: -0.030988548, y: 0, z: 0.8965517}
+    - {x: -0.031286515, y: 0, z: 0.9655172}
+    - {x: -0.031286515, y: 0, z: 1.0344827}
+    - {x: -0.030988548, y: 0, z: 1.1034483}
+    - {x: -0.030392613, y: 0, z: 1.1724138}
+    - {x: -0.029498713, y: 0, z: 1.2413793}
+    - {x: -0.028306847, y: 0, z: 1.3103448}
+    - {x: -0.02681701, y: 0, z: 1.3793104}
+    - {x: -0.025029214, y: 0, z: 1.4482758}
+    - {x: -0.022943445, y: 0, z: 1.5172414}
+    - {x: -0.02055971, y: 0, z: 1.5862069}
+    - {x: -0.017878005, y: 0, z: 1.6551725}
+    - {x: -0.014898341, y: 0, z: 1.7241379}
+    - {x: -0.011620705, y: 0, z: 1.7931035}
+    - {x: -0.008045102, y: 0, z: 1.862069}
+    - {x: 0, y: 0, z: 2}
+    CurrentPercent: 1
 --- !u!4 &1926073462
 Transform:
   m_ObjectHideFlags: 0
@@ -345,4 +387,120 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1936405504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1936405506}
+  - component: {fileID: 1936405505}
+  m_Layer: 0
+  m_Name: UF_PathManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1936405505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936405504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d2b05eb63f876499996bdf856d805f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Paths:
+  - Type: 1
+    LineMode:
+      Id: Path 1
+      ShowPath: 1
+      ShowPoint: 1
+      PathColor: {r: 0.04027453, g: 0.8207547, b: 0, a: 1}
+      Position: {x: 0, y: 0, z: 0}
+      Path:
+        ShowPath: 1
+        ShowPoint: 1
+        IsEditable: 0
+        PathPoints:
+        - {x: 0, y: 0, z: 0}
+        - {x: 0.014793292, y: 0, z: 1}
+      currentPercent: 1
+    CurveMode:
+      Id: Path 1
+      ShowPath: 1
+      ShowPoint: 1
+      PathColor: {r: 1, g: 1, b: 1, a: 1}
+      Position: {x: 0, y: 0, z: 0}
+      Curve:
+        DipslaySegments: 1
+        CurveDefinition: 28
+        MaxDefinition: 100
+        MinDefinition: 1
+        Anchor:
+        - {x: -0.27311164, y: 0, z: 0}
+        - {x: -0.7514761, y: 0, z: 1}
+        - {x: 0.010252655, y: 0, z: 2}
+        curvePoints:
+        - {x: -0.27311164, y: 0, z: 0}
+        - {x: -0.30569878, y: 0, z: 0.071428575}
+        - {x: -0.33512244, y: 0, z: 0.14285715}
+        - {x: -0.36138257, y: 0, z: 0.21428572}
+        - {x: -0.3844792, y: 0, z: 0.2857143}
+        - {x: -0.4044123, y: 0, z: 0.35714287}
+        - {x: -0.42118192, y: 0, z: 0.42857143}
+        - {x: -0.43478805, y: 0, z: 0.5}
+        - {x: -0.44523066, y: 0, z: 0.5714286}
+        - {x: -0.4525098, y: 0, z: 0.64285713}
+        - {x: -0.4566254, y: 0, z: 0.71428573}
+        - {x: -0.4575775, y: 0, z: 0.78571427}
+        - {x: -0.4553661, y: 0, z: 0.85714287}
+        - {x: -0.4499912, y: 0, z: 0.9285714}
+        - {x: -0.4414528, y: 0, z: 1}
+        - {x: -0.4297509, y: 0, z: 1.0714285}
+        - {x: -0.4148855, y: 0, z: 1.1428572}
+        - {x: -0.39685655, y: 0, z: 1.2142857}
+        - {x: -0.37566417, y: 0, z: 1.2857143}
+        - {x: -0.35130826, y: 0, z: 1.3571428}
+        - {x: -0.32378882, y: 0, z: 1.4285715}
+        - {x: -0.2931059, y: 0, z: 1.5}
+        - {x: -0.2592595, y: 0, z: 1.5714285}
+        - {x: -0.22224951, y: 0, z: 1.6428572}
+        - {x: -0.1820761, y: 0, z: 1.7142857}
+        - {x: -0.13873918, y: 0, z: 1.7857143}
+        - {x: -0.09223877, y: 0, z: 1.8571428}
+        - {x: 0.010252655, y: 0, z: 2}
+        CurrentPercent: 1
+  Agents:
+  - MaxSpeedMove: 100
+    MinSpeedMove: 1
+    SpeedMove: 4
+    MaxSpeedRotation: 500
+    MinSpeedRotation: 1
+    SpeedRotation: 1
+    Show: 1
+    PathId: Path 1
+    PathIndex: 0
+    AgentToMove: {fileID: 0}
+--- !u!4 &1936405506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936405504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

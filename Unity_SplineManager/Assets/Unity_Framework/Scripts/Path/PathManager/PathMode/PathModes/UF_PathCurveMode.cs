@@ -35,12 +35,7 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
         {
             if (!IsValid || Curve.IsEmpty) return;
             Curve.SetCurve();
-
-
-            Vector3 _lastAnchor = Curve.Anchor[Curve.Anchor.Count - 1];
-            _lastAnchor = Handles.PositionHandle(_lastAnchor, Quaternion.identity);
-            Curve.Anchor[Curve.Anchor.Count - 1] = _lastAnchor;
-
+            
             for (int j = 0; j < Curve.Anchor.Count; j += 3)
             {
                 Vector3 _handleA = Curve.Anchor[j];
@@ -51,21 +46,27 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
                 // markers
                 Handles.DrawLine(_handleA, _handleA + Vector3.up * .5f);
                 Handles.DrawLine(_handleB, _handleB + Vector3.up * .5f);
+                Handles.DrawLine(_handleC, _handleC + Vector3.up * .5f);
 
                 float _sizeA = HandleUtility.GetHandleSize(_handleA);
                 float _sizeB = HandleUtility.GetHandleSize(_handleB);
+                float _sizeC = HandleUtility.GetHandleSize(_handleC);
 
                 // select Handle
                 bool _pressA = Handles.Button(_handleA + Vector3.up * .05f, Quaternion.identity, .05f * _sizeA,
                     .05f * _sizeA, Handles.DotHandleCap);
                 bool _pressB = Handles.Button(_handleB + Vector3.up * .05f, Quaternion.identity, .05f * _sizeB,
                     .05f * _sizeB, Handles.DotHandleCap);
+                bool _pressC = Handles.Button(_handleC + Vector3.up * .05f, Quaternion.identity, .05f * _sizeC,
+                    .05f * _sizeC, Handles.DotHandleCap);
 
                 if (_pressA)
                     selectedIndex = j;
-                else if (_pressB)
+                if (_pressB)
                     selectedIndex = j + 1;
-
+                if (_pressC)
+                    selectedIndex = j + 2;
+                
                 if (selectedIndex == j) // if select first point segment
                 {
                     _handleA = Handles.PositionHandle(_handleA, Quaternion.identity);
@@ -74,15 +75,23 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
                 }
 
 
-                else if (selectedIndex == j + 1) // if select middle segment curve
+                if (selectedIndex == j + 1) // if select middle segment curve
                 {
                     _handleB = Handles.PositionHandle(_handleB, Quaternion.identity);
+                    if (GUI.changed)
+                        Curve.SetCurve();
+                }
+                
+                if (selectedIndex == j + 2) // if select last segment curve
+                {
+                    _handleC = Handles.PositionHandle(_handleC, Quaternion.identity);
                     if (GUI.changed)
                         Curve.SetCurve();
                 }
 
                 Curve.Anchor[j] = _handleA;
                 Curve.Anchor[j + 1] = _handleB;
+                Curve.Anchor[j + 2] = _handleC;
 
                 // draw linked middle point
                 EditoolsHandle.DrawDottedLine(_handleA, _handleB, .5f);
@@ -100,6 +109,11 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
             EditoolsHandle.Label(Curve.CurvePoints[Curve.GetStartPercentIndex] + Vector3.up, $"Spawn Mark");
         }
 
+        public override void DrawGizmosMode()
+        {
+            DrawGizmos();
+        }
+
         private void DrawCurveOnScene()
         {
             EditoolsHandle.SetColor(PathColor);
@@ -112,7 +126,21 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
                     Handles.DrawLine(_currentPosition, Curve.CurvePoints[i + 1]);
             }
             EditoolsHandle.SetColor(Color.white);
+        }
 
+        private void DrawGizmos()
+        {
+            Gizmos.color = PathColor;
+            Vector3 _currentPosition = Vector3.zero;
+            for (int i = 0; i < Curve.CurvePoints.Length; i++)
+            {
+                _currentPosition = Curve.CurvePoints[i];
+                if (i < Curve.CurvePoints.Length - 1)
+                    Gizmos.DrawLine(_currentPosition, Curve.CurvePoints[i + 1]); // gizmos make GameObject selectable
+            }
+
+            Gizmos.color = Color.white;
+            
         }
 
         void DrawSegmentFeedbackOnScene()

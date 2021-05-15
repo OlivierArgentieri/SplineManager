@@ -58,7 +58,6 @@ public class SM_SplineManager : MonoBehaviour
     {
         for (int i = 0; i < Curves.Count; i++)
         {
-            
             Gizmos.color = Color.white;
             Curves[i].DrawGizmos();
         }

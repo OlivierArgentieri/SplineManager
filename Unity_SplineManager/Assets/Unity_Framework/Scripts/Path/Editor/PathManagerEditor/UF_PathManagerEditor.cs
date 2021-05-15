@@ -3,7 +3,6 @@ using System.Linq;
 using System.Reflection;
 using EditoolsUnity;
 using Unity_Framework.Scripts.Path.PathManager;
-using Unity_Framework.Scripts.Path.PathManager.Path;
 using Unity_Framework.Scripts.Path.PathManager.PathMode;
 using UnityEditor;
 using UnityEngine;
@@ -33,10 +32,8 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
 
         public override void OnInspectorGUI()
         {
+            base.OnInspectorGUI();
             GlobalSettings();
-
-
-            SceneView.RepaintAll();
         }
 
         private void OnSceneGUI()
@@ -54,12 +51,13 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
             EditoolsLayout.Horizontal(true);
             EditoolsBox.HelpBoxInfo($"PATH TOOL V{version}");
             EditoolsLayout.Horizontal(false);
-            
+
             EditoolsLayout.Horizontal(true);
-            EditoolsButton.ButtonWithConfirm("Remove all Path", Color.red, eTarget.ClearPath, "Clear All Paths ?", $"Are you sure", "Yes", "No", _showCondition: !eTarget.IsEmpty);
+            EditoolsButton.ButtonWithConfirm("Remove all Path", Color.red, eTarget.ClearPath, "Clear All Paths ?",
+                $"Are you sure", "Yes", "No", _showCondition: !eTarget.IsEmpty);
             EditoolsButton.Button("Add Path", Color.green, eTarget.AddPath);
             EditoolsLayout.Horizontal(false);
-            
+
             EditorGUILayout.Space(8);
             AllPathUI();
             DrawnAgentUI();
@@ -71,8 +69,8 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
 
             for (int i = 0; i < eTarget.Paths.Count; i++)
             {
-                UF_Path _p = eTarget.Paths[i];
-                UF_PathMode _pathMethod = _p.PathMode.Mode;
+                UF_PathModeSelector _p = eTarget.Paths[i];
+                UF_PathMode _pathMethod = _p.Mode;
                 EditoolsLayout.Foldout(ref _pathMethod.ShowPath, $"Show/Hide {_pathMethod.Id}", true);
 
                 if (!_pathMethod.ShowPath) continue;
@@ -85,16 +83,13 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
                 EditoolsButton.ButtonWithConfirm("Remove This Path", Color.red, eTarget.RemovePath, i,
                     $"Suppress Path {i + 1} ? ", "Are your sure ?");
 
-                UF_PathModeSelector _mode = _p.PathMode;
+                UF_PathModeSelector _mode = _p;
                 _mode.Type = (UF_PathType) EditoolsField.EnumPopup("Mode Type", _mode.Type);
                 EditoolsLayout.Horizontal(false);
 
                 _mode.Mode.DrawSettings();
 
-
                 EditoolsLayout.Space(5);
-                
-                
             }
         }
 
@@ -105,33 +100,37 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
             EditoolsLayout.Horizontal(true);
             EditoolsBox.HelpBoxInfo("Agents Settings");
             EditoolsLayout.Vertical(true);
-            EditoolsButton.ButtonWithConfirm("Remove all Agents", Color.red, eTarget.ClearAgents, "Clear All Agents ?", $"Clear All Agents", "Are your sure ?", _showCondition: eTarget.Agents.Count>0);
+            EditoolsButton.ButtonWithConfirm("Remove all Agents", Color.red, eTarget.ClearAgents, "Clear All Agents ?",
+                $"Clear All Agents", "Are your sure ?", _showCondition: eTarget.Agents.Count > 0);
             EditoolsButton.Button("Add Agent", Color.green, eTarget.AddAgent);
             EditoolsLayout.Vertical(false);
             EditoolsLayout.Horizontal(false);
-            
-            
+
+
             for (int i = 0; i < eTarget.Agents.Count; i++)
             {
                 if (eTarget.Agents[i] == null) return;
                 UF_PathAgent _agent = eTarget.Agents[i];
 
-                EditoolsLayout.Foldout(ref _agent.Show, $"{i+1} / {eTarget.Agents.Count}");
-            
-                if(!_agent.Show) continue;
-            
+                EditoolsLayout.Foldout(ref _agent.Show, $"{i + 1} / {eTarget.Agents.Count}");
+
+                if (!_agent.Show) continue;
+
                 EditoolsLayout.Horizontal(true);
-                EditoolsBox.HelpBox($"{i+1} / {eTarget.Agents.Count}");
-                EditoolsButton.ButtonWithConfirm("-", Color.red, eTarget.RemoveAgent, i, $"Remove Agent {i}", "Are your sure ?");
+                EditoolsBox.HelpBox($"{i + 1} / {eTarget.Agents.Count}");
+                EditoolsButton.ButtonWithConfirm("-", Color.red, eTarget.RemoveAgent, i, $"Remove Agent {i}",
+                    "Are your sure ?");
                 EditoolsLayout.Horizontal(false);
-            
+
                 EditoolsField.IntSlider("Speed Move", ref _agent.SpeedMove, _agent.MinSpeedMove, _agent.MaxSpeedMove);
-                EditoolsField.IntSlider("Speed Rotation", ref _agent.SpeedRotation, _agent.MinSpeedRotation, _agent.MaxSpeedRotation);
-                _agent.AgentToMove = (GameObject) EditoolsField.ObjectField(_agent.AgentToMove, typeof(GameObject), false);
+                EditoolsField.IntSlider("Speed Rotation", ref _agent.SpeedRotation, _agent.MinSpeedRotation,
+                    _agent.MaxSpeedRotation);
+                _agent.AgentToMove =
+                    (GameObject) EditoolsField.ObjectField(_agent.AgentToMove, typeof(GameObject), false);
 
                 if (eTarget.Paths.Count > 0)
                 {
-                    string[] _pathsNames = eTarget.Paths.Select(o => o.PathMode.Mode.Id).ToArray();
+                    string[] _pathsNames = eTarget.Paths.Select(o => o.Mode.Id).ToArray();
                     _agent.PathIndex = EditorGUILayout.Popup("Paths target", _agent.PathIndex, _pathsNames);
                     _agent.PathId = _pathsNames[_agent.PathIndex];
                 }
@@ -145,9 +144,9 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
         {
             for (int i = 0; i < eTarget.Paths.Count; i++)
             {
-                UF_Path _point = eTarget.Paths[i];
-                
-                _point.PathMode.Mode.DrawSceneMode();
+                UF_PathModeSelector _point = eTarget.Paths[i];
+
+                _point.Mode.DrawSceneMode();
             }
         }
 

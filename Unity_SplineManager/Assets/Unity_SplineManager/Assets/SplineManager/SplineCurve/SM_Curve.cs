@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Unity_SplineManager.Assets.SplineManager.Curve
 {
+    [Serializable]
     public class SM_Curve
     {
         #region f/p

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Unity_Framework.Scripts.Import.Interface;
-using Unity_Framework.Scripts.Path.PathManager.Path;
+using Unity_Framework.Scripts.Path.PathManager.PathMode;
 using UnityEngine;
 
 namespace Unity_Framework.Scripts.Path.PathManager.PathAgent
@@ -39,7 +39,7 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathAgent
             set { speedRotation = value; }
         }
 
-        public UF_Path CurrentPath;
+        public UF_PathModeSelector CurrentPath;
         private Vector3 lastCurvePosition => pathPoints?[pathPoints.Count - 1] ?? Vector3.zero;
 
 
@@ -89,11 +89,11 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathAgent
 
         void InitPath()
         {
-            pathPoints = CurrentPath.PathMode.Mode.PathPoints;
+            pathPoints = CurrentPath.Mode.PathPoints;
             if (!IsValid) return;
 
-            currentIndex = CurrentPath.PathMode.Mode.GetStartPercentIndex;
-            currentPoint = CurrentPath.PathMode.Mode.StartPercentPosition;
+            currentIndex = CurrentPath.Mode.GetStartPercentIndex;
+            currentPoint = CurrentPath.Mode.StartPercentPosition;
             transform.position = currentPoint;
         }
 
@@ -128,7 +128,7 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathAgent
             }
 
 
-            return CurrentPath.PathMode.Mode.StartPercentPosition;
+            return CurrentPath.Mode.StartPercentPosition;
         }
 
         // todo need review
@@ -154,7 +154,7 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathAgent
 
         private void DisplayPath()
         {
-            Gizmos.color = CurrentPath.PathMode.Mode.PathColor;
+            Gizmos.color = CurrentPath.Mode.PathColor;
 
             for (int i = 0; i < pathPoints.Count - 1; i++)
             {

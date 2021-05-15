@@ -27,8 +27,6 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
         #region UI Methods
 
 #if UNITY_EDITOR
-        
-
         public override void DrawSceneMode()
         {
             ShowAllPathScene();
@@ -65,7 +63,12 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
             ShowPathPointUi(Path);
             EditoolsField.IntSlider("Start at percent ", ref currentPercent, 0, 100);
         }
-
+        
+        public override void DrawGizmosMode()
+        {
+           DrawGizmos();
+        }
+        
         private void ShowPathPointUi(UF_PathLine _path)
         {
             if (_path.PathPoints.Count == 0) return;
@@ -78,6 +81,7 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
                     EditoolsButton.ButtonWithConfirm("-", Color.red, _path.RemovePoint, i,$"Suppress Point {i + 1} at {_path.PathPoints[i]} ? ", "Are your sure ?");
                     EditoolsBox.HelpBox($"[{i + 1} / {_path.PathPoints.Count}]");
                     _path.PathPoints[i] = EditoolsField.Vector3Field("", _path.PathPoints[i]);
+                    
                     EditoolsLayout.Horizontal(false);
                 }
             }
@@ -103,6 +107,21 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
             if (GetStartPercentIndex < 0 || GetStartPercentIndex > PathPoints.Count) return;
             EditoolsHandle.DrawDottedLine(PathPoints[GetStartPercentIndex], PathPoints[GetStartPercentIndex] + Vector3.up, 1);
             EditoolsHandle.Label(PathPoints[GetStartPercentIndex] + Vector3.up, $"Spawn Mark");
+        }
+
+
+        private void DrawGizmos()
+        {
+            if (PathPoints.Count < 1) return;
+            Gizmos.color = PathColor;
+            
+            for (int j = 0; j < Path.PathPoints.Count; j++)
+            {
+                if (j < Path.PathPoints.Count - 1)
+                    Gizmos.DrawLine(Path.PathPoints[j], Path.PathPoints[j + 1]);
+            }
+
+            Gizmos.color = Color.white;
         }
         /*void SetEditable(UF_Path _path)
         {

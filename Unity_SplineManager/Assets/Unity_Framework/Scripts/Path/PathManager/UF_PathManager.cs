@@ -60,9 +60,7 @@ namespace Unity_Framework.Scripts.Path.PathManager
             for (int i = 0; i < Paths.Count; i++)
             {
                 Gizmos.color = Color.white;
-                Paths[i].CurveMode.DrawGizmosMode();
-                Paths[i].LineMode.DrawGizmosMode();
-                
+                Paths[i].Mode.DrawGizmosMode();
             }
         }
         #endregion

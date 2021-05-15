@@ -105,8 +105,8 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
             DrawSegmentFeedbackOnScene();
             
             
-            EditoolsHandle.DrawDottedLine(Curve.CurvePoints[Curve.GetStartPercentIndex], Curve.CurvePoints[Curve.GetStartPercentIndex] + Vector3.up , 1);
-            EditoolsHandle.Label(Curve.CurvePoints[Curve.GetStartPercentIndex] + Vector3.up, $"Spawn Mark");
+            EditoolsHandle.DrawDottedLine(Curve.CurvePoints[Curve.GetStartPercentIndex], Curve.CurvePoints[Curve.GetStartPercentIndex] + Vector3.up*2 , 1);
+            EditoolsHandle.Label(Curve.CurvePoints[Curve.GetStartPercentIndex] + Vector3.up*2, $"Spawn Mark");
         }
 
         public override void DrawGizmosMode()

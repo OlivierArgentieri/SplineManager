@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using EditoolsUnity;
 using Unity_Framework.Scripts.Path.PathManager;
+using Unity_Framework.Scripts.Path.PathManager.PathAgent.PathAgentSettings;
 using Unity_Framework.Scripts.Path.PathManager.PathMode;
 using UnityEditor;
 using UnityEngine;
@@ -111,7 +112,6 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
             {
                 if (eTarget.Agents[i] == null) return;
                 UF_PathAgent _agent = eTarget.Agents[i];
-
                 EditoolsLayout.Foldout(ref _agent.Show, $"{i + 1} / {eTarget.Agents.Count}");
 
                 if (!_agent.Show) continue;
@@ -122,11 +122,17 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
                     "Are your sure ?");
                 EditoolsLayout.Horizontal(false);
 
-                EditoolsField.IntSlider("Speed Move", ref _agent.SpeedMove, _agent.MinSpeedMove, _agent.MaxSpeedMove);
-                EditoolsField.IntSlider("Speed Rotation", ref _agent.SpeedRotation, _agent.MinSpeedRotation,
-                    _agent.MaxSpeedRotation);
+                // EditoolsField.IntSlider("Speed Move", ref _agent.SpeedMove, _agent.MinSpeedMove, _agent.MaxSpeedMove); // todo remove
+                // EditoolsField.IntSlider("Speed Rotation", ref _agent.SpeedRotation, _agent.MinSpeedRotation _agent.MaxSpeedRotation); // todo remove
+                
+                EditoolsLayout.Horizontal(true);
                 _agent.AgentToMove =
-                    (GameObject) EditoolsField.ObjectField(_agent.AgentToMove, typeof(GameObject), false);
+                    (GameObject) EditoolsField.ObjectField(_agent.AgentToMove, typeof(GameObject), true);
+                // todo input for UF_PAthAgentSettings
+                _agent.AgentSettings =
+                    (UF_PathAgentSettings) EditoolsField.ObjectField(_agent.AgentSettings, typeof(UF_PathAgentSettings),
+                        false);
+                EditoolsLayout.Horizontal(false);
 
                 if (eTarget.Paths.Count > 0)
                 {

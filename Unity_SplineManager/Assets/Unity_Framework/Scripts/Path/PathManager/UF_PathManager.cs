@@ -26,10 +26,13 @@ namespace Unity_Framework.Scripts.Path.PathManager
         {
             for (int i = 0; i < Agents.Count; i++)
             {
-                GameObject _temp = Instantiate(Agents[i].AgentToMove);
+                if (!Agents[i].IsValid) continue;
+                
+                // GameObject _temp = Instantiate(Agents[i].AgentToMove);
+                GameObject _temp = Agents[i].AgentToMove;
                 UF_AgentFollowCurve _script = _temp.AddComponent<UF_AgentFollowCurve>();
-                _script.SpeedMove = Agents[i].SpeedMove;
-                _script.SpeedRotation = Agents[i].SpeedRotation;
+                _script.SpeedMove = Agents[i].AgentSettings.SpeedMove;
+                _script.SpeedRotation = Agents[i].AgentSettings.SpeedRotation;
                 _script.CurrentPath = Paths.FirstOrDefault(p => p.Mode.Id == Agents[i].PathId);
             }
         }

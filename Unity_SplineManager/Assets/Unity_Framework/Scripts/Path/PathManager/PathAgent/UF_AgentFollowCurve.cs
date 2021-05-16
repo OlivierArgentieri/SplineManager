@@ -127,7 +127,7 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathAgent
                 return pathPoints[currentIndex];
             }
 
-
+ 
             return CurrentPath.Mode.StartPercentPosition;
         }
 

@@ -51,8 +51,8 @@
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\Editor\SpawnerManagerMenu\UF_SpawnerManagerMenu.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Menu\Editor\UF_Menu.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\Editor\SpawnerManagerEditor\UF_SpawnerManagerEditor.cs" />
-     <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\Editor\CameraManager\UF_CameraManagerEditor.cs" />
      <Compile Include="Assets\Unity_SplineManager\Assets\SplineManager\Editor\SM_SplineManagerEditor.cs" />
+     <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\Editor\CameraManager\UF_CameraManagerEditor.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.2.0a16/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

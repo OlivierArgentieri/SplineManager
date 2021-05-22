@@ -20,11 +20,11 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerMenu
             
         }
 
+        [MenuItem("UF/PathTool/Assets/New Agent Settings")]
         public static void CreateNewAgentProfile()
         {
             UF_PathAgentSettings _profile = ScriptableObject.CreateInstance<UF_PathAgentSettings>();
-            string _name =
-                UnityEditor.AssetDatabase.GenerateUniqueAssetPath("Assets/Unity_Framework/Scripts/Path/PathAssets/PathSettingsObject/NewPathSettings.asset");
+            string _name = AssetDatabase.GenerateUniqueAssetPath("Assets/Unity_Framework/Scripts/Path/PathAssets/PathSettingsObject/NewPathSettings.asset");
             AssetDatabase.CreateAsset(_profile, _name);
             AssetDatabase.SaveAssets();
             

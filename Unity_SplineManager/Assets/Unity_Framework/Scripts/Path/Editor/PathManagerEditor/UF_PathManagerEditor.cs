@@ -132,6 +132,7 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
                 _agent.AgentSettings =
                     (UF_PathAgentSettings) EditoolsField.ObjectField(_agent.AgentSettings, typeof(UF_PathAgentSettings),
                         false);
+                EditoolsButton.Button("New Profile", Color.white, PathManagerMenu.UF_PathManagerMenu.CreateNewAgentProfile, !_agent.AgentSettings);
                 EditoolsLayout.Horizontal(false);
 
                 if (eTarget.Paths.Count > 0)

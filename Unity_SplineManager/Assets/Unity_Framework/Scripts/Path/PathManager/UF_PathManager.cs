@@ -22,7 +22,7 @@ namespace Unity_Framework.Scripts.Path.PathManager
         
         #region unity methods
 
-        private void Awake()
+        private void Awake() 
         {
             for (int i = 0; i < Agents.Count; i++)
             {
@@ -47,7 +47,7 @@ namespace Unity_Framework.Scripts.Path.PathManager
         #region cutstom methods
         public void AddPath() => Paths.Add(new UF_PathModeSelector());
         public void RemovePath(int _index) => Paths.RemoveAt(_index);
-        public void ClearPath() => Paths.Clear();
+        public void ClearPath() => Paths.Clear(); 
         
         public void AddAgent() => Agents.Add(null);
         public void RemoveAgent(int _index) => Agents.RemoveAt(_index);

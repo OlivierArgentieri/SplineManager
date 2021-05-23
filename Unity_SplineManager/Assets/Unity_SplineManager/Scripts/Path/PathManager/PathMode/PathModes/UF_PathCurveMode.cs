@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using EditoolsUnity;
-using Unity_Framework.Scripts.Import.Interface;
-using Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes.Curve;
+using Unity_SplineManager.Scripts.Import.Interface;
+using Unity_SplineManager.Scripts.Path.PathManager.PathMode.PathModes.Curve;
 using UnityEditor;
 using UnityEngine;
 
-namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
+namespace Unity_SplineManager.Scripts.Path.PathManager.PathMode.PathModes
 {
     [Serializable]
     public class UF_PathCurveMode : UF_PathMode, IIsValid

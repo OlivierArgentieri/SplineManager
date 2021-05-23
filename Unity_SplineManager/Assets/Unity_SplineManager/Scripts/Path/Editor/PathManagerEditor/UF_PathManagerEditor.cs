@@ -2,14 +2,14 @@ using System;
 using System.Linq;
 using System.Reflection;
 using EditoolsUnity;
-using Unity_Framework.Scripts.Path.PathManager;
-using Unity_Framework.Scripts.Path.PathManager.PathAgent;
-using Unity_Framework.Scripts.Path.PathManager.PathAgent.PathAgentSettings;
-using Unity_Framework.Scripts.Path.PathManager.PathMode;
+using Unity_SplineManager.Scripts.Path.PathManager;
+using Unity_SplineManager.Scripts.Path.PathManager.PathAgent.PathAgentSettings;
+using Unity_SplineManager.Scripts.Path.PathManager.PathAgent;
+using Unity_SplineManager.Scripts.Path.PathManager.PathMode;
 using UnityEditor;
 using UnityEngine;
 
-namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
+namespace Unity_SplineManager.Scripts.Path.Editor.PathManagerEditor
 {
     [CustomEditor(typeof(UF_PathManager))]
     public class UF_PathManagerEditor : EditorCustom<UF_PathManager>
@@ -128,7 +128,7 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerEditor
                 _agent.AgentSettings =
                     (UF_PathAgentSettings) EditoolsField.ObjectField(_agent.AgentSettings, typeof(UF_PathAgentSettings),
                         false);
-                EditoolsButton.Button("New Settings", Color.white, PathManagerMenu.UF_PathManagerMenu.CreateNewAgentProfile, !_agent.AgentSettings);
+                EditoolsButton.Button("New Settings", Color.white, Unity_Framework.Scripts.Path.Editor.PathManagerMenu.UF_PathManagerMenu.CreateNewAgentProfile, !_agent.AgentSettings);
                 EditoolsLayout.Horizontal(false);
 
                 if (eTarget.Paths.Count > 0)

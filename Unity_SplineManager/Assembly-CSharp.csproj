@@ -44,15 +44,11 @@
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterBehaviour\CharacterBehaviours\UF_CharacterBehaviourTPS.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterBehaviour\CharacterBehaviours\UF_CharacterBehaviourRTS.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnPoint\UF_SpawnPoint.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Assets\SplineManager\SplineCurve\SM_Curve.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathMode\PathModes\Curve\UF_PathCurve.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathAgent\UF_AgentFollowCurve.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathMode\PathModes\UF_PathLineMode.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Assets\SplineManager\SplineAgent\SM_AgentFollowSpline.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Assets\SplineManager\SM_SplineManager.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterBehaviour\CharacterBehaviours\UF_CharacterBehaviourFPS.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\SpawnModes\UF_LineMode.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Assets\SplineManager\SplineAgent\SM_Agent.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Import\Interface\Manager\IHandlerItem.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\SpawnModes\BezierMode\UF_Bezier.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Input\InputManager\UF_InputManager.cs" />
@@ -63,7 +59,6 @@
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterSettings\UF_CharacterSettings.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\Behaviour\UF_CameraBehaviour.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Import\Interface\IIsValid.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Test.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Import\Util\Util.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\Behaviour\Behaviours\UF_CameraBehaviourFPS.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\UF_SpawnMode.cs" />
@@ -88,6 +83,17 @@
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\SpawnModes\UF_PointMode.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\UF_SpawnerManager.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\SpawnModes\UF_CircleMode.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\Curve\UF_PathCurve.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\LinePath\UF_PathLine.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathAgent\UF_AgentFollowCurve.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\UF_PathLineMode.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\UF_PathModeSelector.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathAgent\UF_PathAgent.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathAgent\PathAgentSettings\UF_PathAgentSettings.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\UF_PathManager.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\UF_PathCurveMode.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\UF_PathMode.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Import\Interface\IIsValid.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.2.0a16/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

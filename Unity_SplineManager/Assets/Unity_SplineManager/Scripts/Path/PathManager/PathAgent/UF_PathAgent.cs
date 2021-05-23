@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity_Framework.Scripts.Path.PathManager.PathAgent.PathAgentSettings;
+using Unity_SplineManager.Scripts.Path.PathManager.PathAgent.PathAgentSettings;
 using UnityEngine;
 
-namespace Unity_Framework.Scripts.Path.PathManager.PathAgent
+namespace Unity_SplineManager.Scripts.Path.PathManager.PathAgent
 {
     [Serializable]
     public class UF_PathAgent

@@ -133,12 +133,10 @@ namespace Unity_SplineManager.Scripts.Path.PathManager.PathMode.PathModes
             }
 
             Gizmos.color = Color.white;
-            
         }
 
         void DrawSegmentFeedbackOnScene()
         {
-           
             Vector3 _currentPosition = Vector3.zero;
             for (int i = 0; i < Curve.Anchor.Count; i++)
             {
@@ -147,8 +145,6 @@ namespace Unity_SplineManager.Scripts.Path.PathManager.PathMode.PathModes
                 EditoolsHandle.DrawDottedLine(_currentPosition, _currentPosition + Vector3.up * 1.5f, 1);
                 EditoolsHandle.Label(_currentPosition + Vector3.up*1.5f, $"Segment : {i / 3}");
             }
-
-
         }
 
         public override void DrawSettings()

@@ -42,20 +42,26 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterBehaviour\CharacterBehaviours\UF_CharacterBehaviourTPS.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\UF_PathCurveMode.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterBehaviour\CharacterBehaviours\UF_CharacterBehaviourRTS.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnPoint\UF_SpawnPoint.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathMode\PathModes\Curve\UF_PathCurve.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\UF_PathLineMode.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathAgent\UF_AgentFollowCurve.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathMode\PathModes\UF_PathLineMode.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterBehaviour\CharacterBehaviours\UF_CharacterBehaviourFPS.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathAgent\UF_AgentFollowCurve.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\SpawnModes\UF_LineMode.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Import\Interface\Manager\IHandlerItem.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathAgent\PathAgentSettings\UF_PathAgentSettings.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\SpawnModes\BezierMode\UF_Bezier.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Input\InputManager\UF_InputManager.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterBehaviour\UF_CharacterBehaviour.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Import\Interface\Manager\IHandler.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Import\Interface\IEnable.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Import\Interface\IIsValid.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterComponent\UF_CharacterComponent.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\Curve\UF_PathCurve.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterSettings\UF_CharacterSettings.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\Behaviour\UF_CameraBehaviour.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Import\Interface\IIsValid.cs" />
@@ -65,10 +71,13 @@
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\CameraManager\UF_CameraManager.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathMode\PathModes\LinePath\UF_PathLine.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathMode\PathModes\UF_PathCurveMode.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\LinePath\UF_PathLine.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathAgent\UF_PathAgent.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\UF_PathManager.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\CameraComponents\UF_CameraComponent.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathAgent\UF_PathAgent.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Character\CharacterManager\UF_CharacterManager.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\UF_PathManager.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathAgent\PathAgentSettings\UF_PathAgentSettings.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnTrigger\UF_SpawnTrigger.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\CameraSetting\UF_CameraSetting.cs" />
@@ -77,23 +86,14 @@
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\UF_SpawnModeSelector.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Input\InputManager\UF_Key.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Path\PathManager\PathMode\UF_PathMode.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\UF_PathMode.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\Behaviour\Behaviours\UF_CameraBehaviourRTS.cs" />
+     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\UF_PathModeSelector.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\3C\Camera\Behaviour\Behaviours\UF_CameraBehaviourTPS.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\SpawnModes\UF_BezierMode.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\SpawnModes\UF_PointMode.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\UF_SpawnerManager.cs" />
      <Compile Include="Assets\Unity_Framework\Scripts\Spawner\SpawnerManager\SpawnMode\SpawnModes\UF_CircleMode.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\Curve\UF_PathCurve.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\LinePath\UF_PathLine.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathAgent\UF_AgentFollowCurve.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\UF_PathLineMode.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\UF_PathModeSelector.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathAgent\UF_PathAgent.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathAgent\PathAgentSettings\UF_PathAgentSettings.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\UF_PathManager.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\PathModes\UF_PathCurveMode.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Path\PathManager\PathMode\UF_PathMode.cs" />
-     <Compile Include="Assets\Unity_SplineManager\Scripts\Import\Interface\IIsValid.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.2.0a16/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

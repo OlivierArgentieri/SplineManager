@@ -22,8 +22,6 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
         public override Vector3 StartPercentPosition => PathPoints[GetStartPercentIndex];
         public override int GetStartPercentIndex => (int) ((float) currentPercent / 100 * (PathPoints.Count - 1));
         #endregion
-
-        
         
         #region UI Methods
 
@@ -56,7 +54,6 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode.PathModes
             EditoolsBox.HelpBox("Path Color");
             EditoolsField.ColorField(PathColor, ref PathColor);
             EditoolsLayout.Horizontal(false);
-            //  EditoolsButton.Button("Editable", Path.IsEditable ? Color.green : Color.grey, SetEditable, Path);
 
             // New Line
 

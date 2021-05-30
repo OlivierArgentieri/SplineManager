@@ -51,12 +51,9 @@
      <Compile Include="Assets\Path\PathManager\PathMode\PathModes\UF_PathCurveMode.cs" />
      <Compile Include="Assets\Path\PathManager\PathAgent\UF_AgentFollowCurve.cs" />
      <Compile Include="Assets\Path\PathManager\PathMode\PathModes\UF_PathLineMode.cs" />
-     <Compile Include="Assets\Import\Interface\Manager\IHandler.cs" />
      <Compile Include="Assets\Import\Util\Util.cs" />
      <Compile Include="Assets\Import\ManagerTemplate\ManagerTemplate.cs" />
-     <Compile Include="Assets\Import\Interface\IEnable.cs" />
      <Compile Include="Assets\Import\Interface\IIsValid.cs" />
-     <Compile Include="Assets\Import\Interface\Manager\IHandlerItem.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.2.0a16/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

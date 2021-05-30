@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using EditoolsUnity;
 using Unity_Framework.Scripts.Path.PathManager.PathAgent;
 using Unity_Framework.Scripts.Path.PathManager.PathMode;
 using UnityEngine;
@@ -28,12 +27,9 @@ namespace Unity_Framework.Scripts.Path.PathManager
             {
                 if (!Agents[i].IsValid) continue;
                 
-                // GameObject _temp = Instantiate(Agents[i].AgentToMove);
                 GameObject _temp = Agents[i].AgentToMove;
                 UF_AgentFollowCurve _script = _temp.AddComponent<UF_AgentFollowCurve>();
-                _script.agentSetting = Agents[i].AgentSettings;/*
-                _script.SpeedMove = Agents[i].AgentSettings.SpeedMove;
-                _script.SpeedRotation = Agents[i].AgentSettings.SpeedRotation;*/
+                _script.agentSetting = Agents[i].AgentSettings;
                 _script.CurrentPath = Paths.FirstOrDefault(p => p.Mode.Id == Agents[i].PathId);
             }
         }
@@ -57,8 +53,6 @@ namespace Unity_Framework.Scripts.Path.PathManager
 
         #region debug
 
-        // to show path always
-        
         private void OnDrawGizmos()
         {
             for (int i = 0; i < Paths.Count; i++)

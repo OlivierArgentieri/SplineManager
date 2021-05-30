@@ -8,7 +8,7 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerMenu
     public class UF_PathManagerMenu
     {
         #region custom methods
-        [MenuItem("UF/PathTool/PathManager", false, 1)]
+        [MenuItem("PathTool/PathManager", false, 1)]
         public static void Init()
         {
             UF_PathManager[] _spawnerManagers = Object.FindObjectsOfType<UF_PathManager>();
@@ -19,7 +19,7 @@ namespace Unity_Framework.Scripts.Path.Editor.PathManagerMenu
             
         }
 
-        [MenuItem("UF/PathTool/Assets/New Agent Settings")]
+        [MenuItem("PathTool/Assets/New Agent Settings")]
         public static void CreateNewAgentProfile()
         {
             UF_PathAgentSettings _profile = ScriptableObject.CreateInstance<UF_PathAgentSettings>();

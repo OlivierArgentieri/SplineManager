@@ -23,8 +23,7 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode
         public Vector3 Position = Vector3.zero;
         
         #endregion
-
-
+        
         #region custom methods
         
         #if UNITY_EDITOR

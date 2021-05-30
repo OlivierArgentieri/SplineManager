@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Unity_Framework.Scripts.Path.PathManager.PathAgent.PathAgentSettings
 {
-    [Serializable][CreateAssetMenu(fileName = "New Path Agent Setting", menuName = "UF/Path/PathAgentSetting")]
+    [Serializable][CreateAssetMenu(fileName = "New Path Agent Setting", menuName = "PathTool/PathAgentSetting")]
     public class UF_PathAgentSettings : ScriptableObject
     {
         #region f/p

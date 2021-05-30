@@ -8,7 +8,7 @@ namespace Unity_Framework.Scripts.Path.PathManager.PathMode
     {
         #region f/p
 
-        public UF_PathType Type = UF_PathType.Line;
+        public UF_PathType Type = UF_PathType.Curve;
         
         // modes
         public UF_PathLineMode LineMode = new UF_PathLineMode();

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Props_Agent
   m_EditorClassIdentifier: 
   SpeedMove: 1
-  SpeedRotation: 20
+  SpeedRotation: 50
   TargetLookAt: {fileID: 0}
   UseLookAt: 0

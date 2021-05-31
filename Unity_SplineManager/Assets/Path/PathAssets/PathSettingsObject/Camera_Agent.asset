@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c68fa77d8d6462f8e2c5fbb9b564a7a, type: 3}
   m_Name: Camera_Agent
   m_EditorClassIdentifier: 
-  SpeedMove: 1.34
+  SpeedMove: 1.53
   SpeedRotation: 28.94
   TargetLookAt: {fileID: 0}
   UseLookAt: 1
